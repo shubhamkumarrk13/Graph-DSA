@@ -1,2 +1,2 @@
 # Graph-DSA
-Graph Solutions
+Solutions of Graph problems
