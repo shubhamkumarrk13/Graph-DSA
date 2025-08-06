@@ -2,6 +2,7 @@
 // Fill the stack using topological sort using original map
 // Reverse the map
 // Perform DFS based on the stack elements
+// Geeks for Geeks question link : https://www.geeksforgeeks.org/problems/strongly-connected-components-kosarajus-algo/1
 
 class Solution {
     // Function to find number of strongly connected components in the graph.
