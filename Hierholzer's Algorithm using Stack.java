@@ -45,7 +45,7 @@ class Solution {
             if(outDegree.getOrDefault(key , 0) - inDegree.getOrDefault(key , 0) == 1) startNode = key;
         }
 
-        if(startNode == -1) startNode = pairs[0][0];
+        if(startNode == -1) startNode = pairs[0][0]; // If cycle is present
 
         // Perform DFS to get the Euler's path
 
