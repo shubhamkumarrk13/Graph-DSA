@@ -2,6 +2,13 @@
 
 // ***************** Using Hierholzer's Algorithm *******************
 
+/*
+step 1 : Build adjaceny map
+step 2 : Find inDegree and outDegree
+step 3 : Find start node of the Eulers's Path
+step 4 : Perform Stack based DSA and store the values in a list
+*/
+
 class Solution {
 
     public int[][] validArrangement(int[][] pairs) {
