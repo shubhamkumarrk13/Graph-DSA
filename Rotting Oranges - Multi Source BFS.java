@@ -55,7 +55,6 @@ class Solution {
             }
         }
 
-        if(q.isEmpty() && freshOranges == 1) return -1; // if there is no rotten oranges but have fresh oranges
 
         if(freshOranges == 0) return 0; // when there is no fresh oranges
 
