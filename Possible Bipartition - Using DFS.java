@@ -5,9 +5,9 @@
 
 class Solution {
 
-    public boolean dfs(int u , int[] color , int colr , Map<Integer , List<Integer>> map) {
+    public boolean DFS(int u , int[] color , int presentColor , Map<Integer , List<Integer>> map) {
 
-        color[u] = colr;
+        color[u] = presentColor;
 
         for(int v : map.getOrDefault(u , new ArrayList<>())) {
 
@@ -15,16 +15,15 @@ class Solution {
 
             if(color[v] == -1) {
 
-                int nextColor = 1 - color[u];
+                int nextColor = 1 - presentColor;
 
-                if(dfs(v , color , nextColor , map) == false) return false;
+                if(DFS(v , color , nextColor , map) == false) return false;
             }
         }
 
         return true;
     }
 
-    
     public boolean possibleBipartition(int n, int[][] dislikes) {
 
         Map<Integer , List<Integer>> map = new HashMap<>();
@@ -40,7 +39,7 @@ class Solution {
             map.computeIfAbsent(v , k -> new ArrayList<>()).add(u);
         }
 
-        int[] color = new int[n + 1]; // acts as visited array , -1 --> not visited , 0 --> red , 1 --> green
+        int[] color = new int[n + 1];
 
         Arrays.fill(color , -1);
 
@@ -48,9 +47,9 @@ class Solution {
 
             if(color[i] == -1) {
 
-                int colr = 1;
+                int presentColor = 1;
 
-                if(dfs(i , color , colr , map) == false) return false;
+                if(DFS(i , color , presentColor , map) == false) return false;
             }
         }
 
