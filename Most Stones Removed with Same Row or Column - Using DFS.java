@@ -24,7 +24,7 @@ class Solution {
 
         n = stones.length;
 
-        boolean[] visited = new boolean[n];
+        boolean[] visited = new boolean[n]; // To store the index of the visited element
 
         Arrays.fill(visited , false);
 
