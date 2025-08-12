@@ -1,4 +1,5 @@
 
+
 // Problem Link : https://leetcode.com/problems/minimum-score-of-a-path-between-two-cities/
 
 // *********************** USING DFS ****************
@@ -21,11 +22,11 @@ class Solution {
 
     int result = Integer.MAX_VALUE;
 
-    public void DFS(int source , int target , Set<Integer> visited , Map<Integer , List<Pair>> map) {
+    public void DFS(int curr , Set<Integer> visited , Map<Integer , List<Pair>> map) {
 
-        visited.add(source);
+        visited.add(curr);
 
-        for(Pair pair : map.getOrDefault(source , new ArrayList<>())) {
+        for(Pair pair : map.getOrDefault(curr , new ArrayList<>())) {
 
             int v = pair.node;
 
@@ -33,10 +34,7 @@ class Solution {
 
             result = Math.min(result , d); // Check before visitng since the node might be visited by other route
 
-            if(!visited.contains(v)) {
-
-                DFS(v , target , visited , map);
-            }
+            if(!visited.contains(v)) DFS(v , visited , map);
         }
     }
 
@@ -59,9 +57,8 @@ class Solution {
 
         Set<Integer> visited = new HashSet<>();
 
-        DFS(1 , n-1, visited , map);
+        DFS(1 , visited , map);
 
-        return result;
-        
+        return result;  
     }
 }
